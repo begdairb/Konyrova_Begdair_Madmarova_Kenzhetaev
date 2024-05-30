@@ -1,0 +1,140 @@
+{% extends 'manager/base.html' %}
+{% load static %}
+
+{% block title %} Login {% endblock %}
+
+{% block body %}
+
+    {% include 'manager/loader.html' %}
+
+    <div class="page-border" data-wow-duration="0.7s" data-wow-delay="0.2s">
+        <div class="top-border wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;"></div>
+        <div class="right-border wow fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;"></div>
+        <div class="bottom-border wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;"></div>
+        <div class="left-border wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"></div>
+    </div>
+
+    <div id="wrapper">
+        <header id="banner3" class="scrollto clearfix" data-enllax-ratio=".5">
+            {% include 'manager/header.html' %}
+
+            <!--Banner Content-->
+            <div id="banner-content" class="row clearfix" style="min-height: 600px;">
+
+                <div class="col-38">
+
+                    <div class="section-heading">
+                        <h1>IoT Devices Stats</h1>
+                        <p>
+                            <ul>
+                                <li>{{ overall_stats.analysis_count }} analysis provided</li>
+                                <li>{{ overall_stats.payload_count }} file payloads</li>
+                                <li>{{ overall_stats.packet_length }} MB of data volume</li>
+                                {% if overall_stats.created_date %}
+                                    <li>{{ overall_stats.created_date }} is first seen</li>
+                                {% endif %}
+                            </ul>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div><!--End of Row-->
+
+        </header>
+
+        <!--Main Content Area-->
+        <main id="content">
+            <!--History Analysis Tables-->
+            <section id="pricing" class="secondary-color text-center scrollto clearfix ">
+                <div class="row clearfix">
+
+                    {% if history %}
+                        <div class="section-heading">
+                            <h3>DEVICE HISTORY</h3>
+                            <h2 class="section-title">Process history</h2>
+                        </div>
+                        {% for history_id, history_obj in history.items %}
+                            <!--History Analysis Block-->
+                            <div class="pricing-block col-3 wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="pricing-block-content">
+                                    <h3>Analysis: {{ history_obj.created_date }}</h3>
+                                    <div class="pricing">
+                                        <div class="price">{{ history_obj.prediction_score_avg }}</div>
+                                        <p>Malicious Activity - Prediction Score</p>
+                                    </div>
+                                    <ul>
+                                        <li>{{ history_obj.analysis_count }} analysis provided</li>
+                                        <li>{{ history_obj.payload_count }} file payloads</li>
+                                        <li>{{ history_obj.packet_length }} MB of data volume</li>
+                                        <li>
+                                            <a id="download_{{ history_id }}"
+                                               download="analysis_{{ history_id }}.json"
+                                               type="text/json"> Download analysis JSON
+                                            </a>
+                                            <p id="download_{{ history_id }}_data" hidden>{{ history_obj.result }}</p>
+                                            <script>
+                                                let json = document.getElementById('download_{{ history_id }}_data').innerText;
+                                                let data = new Blob([json]);
+                                                let link_to_download = document.getElementById('download_{{ history_id }}');
+                                                link_to_download.href = URL.createObjectURL(data);
+                                            </script>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--End History Analysis Block-->
+                        {% endfor %}
+                    {% else %}
+                        <div class="section-heading">
+                            <h3>DEVICE HISTORY</h3>
+                            <h2 class="section-title">No history is processed yet</h2>
+                        </div>
+                    {% endif %}
+
+                </div>
+            </section>
+            <!--End of History Analysis Tables-->
+
+            <!--New Device-->
+            <section id="newDevice" class="secondary-color text-center scrollto clearfix ">
+                <div class="row clearfix">
+                    <div class="section-heading">
+                        <h3>NEW ANALYSIS</h3>
+                        <h2 class="section-title">Process PCAP analysis</h2>
+                    </div>
+                    <div class="pricing-block text-center wow fadeInUp mx-auto" data-wow-delay="0.4s">
+                        <form class="form" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="input-group text-center">
+                                <label for="pcap_file">PCAP File for analysis:</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="file" class="form-control" name="pcap_file" id="pcap_file" required>
+                            </div>
+                            <div class="input-group text-center">
+                                <input type="submit" value="Process Analysis" class="button">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    </div>
+
+    <!-- Include JavaScript resources -->
+    <script src="{% static 'manager/js/jquery.1.8.3.min.js' %}"></script>
+    <script src="{% static 'manager/js/wow.min.js' %}"></script>
+    <script src="{% static 'manager/js/featherlight.min.js' %}"></script>
+    <script src="{% static 'manager/js/featherlight.gallery.min.js' %}"></script>
+    <script src="{% static 'manager/js/jquery.enllax.min.js' %}"></script>
+    <script src="{% static 'manager/js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'manager/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'manager/js/jquery.stickyNavbar.min.js' %}"></script>
+    <script src="{% static 'manager/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'manager/js/images-loaded.min.js' %}"></script>
+    <script src="{% static 'manager/js/lightbox.min.js' %}"></script>
+    <script src="{% static 'manager/js/site.js' %}"></script>
+
+{% endblock %}

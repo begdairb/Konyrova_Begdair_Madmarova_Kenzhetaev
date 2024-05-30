@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="{% static 'manager/images/favicon.ico' %}" title="Favicon"/>
+
+    <!-- Main CSS Files -->
+    <link rel="stylesheet" href="{% static 'manager/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'manager/css/styleguide.css' %}">
+    <link rel="stylesheet" href="{% static 'manager/css/style1.css' %}">
+
+
+    <!-- Namari Color CSS -->
+    <link rel="stylesheet" href="{% static 'manager/css/namari-color.css' %}">
+
+    <!--Icon Fonts - Font Awesome Icons-->
+    <link rel="stylesheet" href="{% static 'manager/css/font-awesome.min.css' %}">
+
+    <!-- Animate CSS-->
+    <link href="{% static 'manager/css/animate.css' %}" rel="stylesheet" type="text/css">
+
+    <!--Google Webfonts-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+{% block body %}
+{% endblock %}
+</body>
+</html>

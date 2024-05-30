@@ -1,0 +1,395 @@
+{% extends 'manager/base.html' %}
+{% load static %}
+
+{% block title %} IoT Defender {% endblock %}
+
+{% block body %}
+
+    {% include 'manager/loader.html' %}
+
+    <div class="page-border" data-wow-duration="0.7s" data-wow-delay="0.2s">
+        <div class="top-border wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;"></div>
+        <div class="right-border wow fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;"></div>
+        <div class="bottom-border wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;"></div>
+        <div class="left-border wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"></div>
+    </div>
+
+    <div id="wrapper">
+
+        <header id="banner" class="scrollto clearfix" data-enllax-ratio=".5">
+            {% include 'manager/header.html' %}
+
+            <!--Banner Content-->
+            <div id="banner-content" class="row clearfix">
+
+                <div class="frame">
+                    <div class="home">
+                      <div class="div">
+                        <div class="content">
+                          <div class="column"><p class="medium-length-hero">Protect your IoT devices from malicious attacks</p></div>
+                          <div class="div-2">
+                            <p class="lorem-ipsum-dolor">
+                              With our advanced machine learning methods, we detect and prevent hacks on IoT devices, ensuring your
+                              data and privacy are secure.
+                            </p>
+                          </div>
+                        </div>
+                        <img class="placeholder-image" src="{% static '../../static/manager/images/banner-images/1.png' %}" alt="My Image">
+                        
+                      </div>
+                      <div class="div">
+                        <div class="container">
+                          <div class="div-2">
+                            <p class="heading">Detect and prevent hacks on IoT devices with advanced machine learning.</p>
+                            <p class="text">
+                              Our cutting-edge machine learning algorithms analyze device behavior to identify and stop malicious
+                              attacks, ensuring the security of your IoT network.
+                            </p>
+                          </div>
+                          <img class="img" src="{% static '../../static/manager/images/banner-images/2.webp' %}" alt="My Image">
+
+                        </div>
+                      </div>
+                      
+                      <div class="div">
+                        <div class="container">
+                          <div class="div-2">
+                            <div class="div-4">
+                              <div class="div-5">
+                                <div class="subheading">Secure</div>
+                                <div class="div-3">
+                                  <p class="heading-2">Protecting Your IoT Devices with Advanced Security Solutions</p>
+                                  <p class="text">
+                                    Our IoT security solutions offer numerous advantages over traditional methods. With our advanced
+                                    machine learning algorithms, we can detect and prevent hacks and malicious attacks on your IoT
+                                    devices, ensuring the safety and integrity of your data.
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="list">
+                                <div class="div-6">
+                                  <div class="text-wrapper-3">Advanced Protection</div>
+                                  <p class="text-wrapper-2">
+                                    Stay one step ahead of hackers with our cutting-edge security technology.
+                                  </p>
+                                </div>
+                                <div class="div-6">
+                                  <div class="text-wrapper-3">Efficient Monitoring</div>
+                                  <p class="text-wrapper-2">
+                                    Monitor your IoT devices in real-time and receive instant alerts for any suspicious activities.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <img class="placeholder-image" src="{% static '../../static/manager/images/banner-images/3.jpg' %}" alt="My Image">
+
+                        </div>
+                      </div>
+                      <div class="div">
+                        <div class="content">
+                          <div class="column-2">
+                            <div class="div-5">
+                              <div class="text-wrapper-4">Secure</div>
+                              <p class="heading-3">Detect and Prevent Malicious Attacks on IoT Devices</p>
+                            </div>
+                            
+                          </div>
+                          <div class="div-6">
+                            <div class="timeline-item">
+                              <div class="content-3">
+                                <img class="icon-relume" src="{% static '../../static/manager/images/banner-images/4.png' %}" alt="My Image">
+                                <img class="divider" src="img/divider.svg" />
+                              </div>
+                              <div class="div-6">
+                                <div class="text-wrapper-3">How It</div>
+                                <p class="text-wrapper-2">
+                                  Our solution uses machine learning methods to detect and prevent hacks and malicious attacks on IoT
+                                  devices.
+                                </p>
+                              </div>
+                            </div>
+                            <div class="timeline-item">
+                              <div class="content-3">
+                                <img class="icon-relume" src="{% static '../../static/manager/images/banner-images/5.png' %}" alt="My Image"> 
+                                <img class="divider" src="img/divider-2.svg" />
+                              </div>
+                              <div class="div-6">
+                                <div class="text-wrapper-3">Detect</div>
+                                <p class="text-wrapper-2">
+                                  Our advanced algorithms analyze device behavior patterns to identify potential threats.
+                                </p>
+                              </div>
+                            </div>
+                            <div class="timeline-item">
+                              <div class="content-3">
+                                <img class="icon-relume" src="{% static '../../static/manager/images/banner-images/6.png' %}" alt="My Image"> 
+                                <img class="divider" src="img/divider-3.svg" />
+                              </div>
+                              <div class="div-6">
+                                <div class="text-wrapper-3">Prevent</div>
+                                <p class="text-wrapper-2">
+                                  We take immediate action to block suspicious activities and safeguard your IoT devices.
+                                </p>
+                              </div>
+                            </div>
+                            <div class="timeline-item">
+                              <div class="content-3">
+                                <img class="icon-relume" src="{% static '../../static/manager/images/banner-images/7.webp' %}" alt="My Image"> 
+                              </div>
+                              <div class="div-6">
+                                <div class="text-wrapper-3">Secure</div>
+                                <p class="text-wrapper-2">
+                                  Rest easy knowing that your IoT devices are protected from malicious attacks.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="CTA">
+                        <div class="column-3">
+                          <div class="div-3">
+                            <p class="heading-4">Protect your IoT devices today</p>
+                            <p class="text-3">
+                              Contact us for a personalized consultation on securing your IoT devices from hacks and attacks.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="div">
+                        <div class="container">
+                          <div class="div-2">
+                            <p class="heading">Stay Informed About IoT Security</p>
+                            <p class="text">Subscribe to our newsletter for the latest updates</p>
+                          </div>
+                          
+                        </div>
+                      </div>
+                      <div class="div-7">
+                        <div class="container-2">
+                          <div class="section-title-2">
+                            <div class="heading-5">Frequently Asked Questions</div>
+                            <p class="text-wrapper-6">
+                              Find answers to common questions about IoT security and the role of machine learning in protection.
+                            </p>
+                          </div>
+                          <div class="div-5">
+                            <div class="accordion-item">
+                              <p class="question">How does machine learning work?</p>
+                              <img class="plus" src="{% static '../../static/manager/images/banner-images/8.jpg' %}" alt="My Image">
+                            </div>
+                            <div class="accordion-item">
+                              <p class="question">Why is IoT security important?</p>
+                              <img class="plus" src="{% static '../../static/manager/images/banner-images/8.jpg' %}" alt="My Image">
+
+                            </div>
+                            <div class="accordion-item">
+                              <p class="question">How can machine learning enhance IoT security?</p>
+                              <img class="plus" src="{% static '../../static/manager/images/banner-images/8.jpg' %}" alt="My Image">
+                            </div>
+                            <div class="accordion-item">
+                              <p class="question">What are the benefits of using machine learning for IoT security?</p>
+                              <img class="plus" src="{% static '../../static/manager/images/banner-images/8.jpg' %}" alt="My Image">
+                            </div>
+                            <div class="accordion-item">
+                              <p class="question">Is machine learning applicable to all IoT devices?</p>
+                              <img class="plus" src="{% static '../../static/manager/images/banner-images/8.jpg' %}" alt="My Image">
+                            </div>
+                          </div>
+                          <div class="content-5">
+                            <div class="content-6">
+                              <div class="heading-6">Still have questions?</div>
+                              <p class="text-wrapper-6">Contact us for further assistance.</p>
+                            </div>
+                            <div class="style-secondary-3"><button class="text-wrapper">Contact</button></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="div-7">
+                        <div class="div-8">
+                          <div class="subheading">Innovative</div>
+                          <div class="content-7">
+                            <div class="heading-5">Meet Our Team</div>
+                            <p class="text-wrapper-6">We are a group of experts in machine learning and cybersecurity.</p>
+                          </div>
+                        </div>
+                        <div class="content-8">
+                          <div class="content-9">
+                            <div class="row">
+                              <div class="card">
+                                <img class="placeholder-image-2" src="{% static '../../static/manager/images/banner-images/9.png' %}" alt="My Image">
+
+                                <div class="content-6">
+                                  <div class="title">
+                                    <div class="name">Begdair Bakdaulet</div>
+                                    <div class="text-wrapper-6">Machine Learning Expert</div>
+                                  </div>
+                                  <p class="text-wrapper-7">
+                                    Bakdaulet is passionate about using machine learning to solve complex cybersecurity challenges.
+                                  </p>
+                                </div>
+                                <img class="img-3" src="{% static '../../static/manager/images/banner-images/11.png' %}" alt="My Image">
+
+
+                              </div>
+                              <div class="card">
+                                <img class="placeholder-image-2" src="{% static '../../static/manager/images/banner-images/10.jpeg' %}" alt="My Image">
+                                <div class="content-6">
+                                  <div class="title">
+                                    <div class="name">Madmarova Zhasmin</div>
+                                    <div class="text-wrapper-6">Cybersecurity Specialist</div>
+                                  </div>
+                                  <p class="text-wrapper-7">
+                                    Zhasmin has extensive experience in identifying and mitigating cyber threats.
+                                  </p>
+                                </div>
+                                <img class="img-3" src="{% static '../../static/manager/images/banner-images/11.png' %}" alt="My Image">
+                              </div>
+                              <div class="card">
+                                <img class="placeholder-image-2" src="{% static '../../static/manager/images/banner-images/13.jpeg' %}" alt="My Image">
+                                <div class="content-6">
+                                  <div class="title">
+                                    <div class="name">Kenzhetaev Ansar</div>
+                                    <div class="text-wrapper-6">Data Scientist</div>
+                                  </div>
+                                  <p class="text-wrapper-7">
+                                    Ansar applies advanced data analysis techniques to detect and prevent hacks.
+                                  </p>
+                                </div>
+                                <img class="img-3" src="{% static '../../static/manager/images/banner-images/11.png' %}" alt="My Image">
+                              </div>
+                              <div class="card">
+                                <img class="placeholder-image-2" src="{% static '../../static/manager/images/banner-images/12.jpeg' %}" alt="My Image">
+                                <div class="content-6">
+                                  <div class="title">
+                                    <div class="name">Konyrova Madina</div>
+                                    <div class="text-wrapper-6">Supervisor</div>
+                                  </div>
+                                  <p class="text-wrapper-7">
+                                    Madina oversees and guides the team, ensuring adherence to timelines, quality standards, and project objectives, while also providing support and resolving issues as they arise.
+                                  </p>
+                                </div>
+                                <img class="img-3" src="{% static '../../static/manager/images/banner-images/11.png' %}" alt="My Image">
+                              </div>
+                            </div>
+                            
+                          </div>
+                          <div class="content-10">
+                            <div class="div-8">
+                              <div class="heading-6">We’re hiring!</div>
+                              <p class="text-wrapper-6">Join Our Team: Exciting Opportunities Await!</p>
+                              <p class="text-wrapper-6">Are you passionate about innovation and eager to make a difference in the world of technology? Look no further! We're on the lookout for talented individuals to join our dynamic team. Whether you're a seasoned professional or a fresh graduate ready to embark on an exciting journey, we have the perfect role for you.</p>
+                              <p class="text-wrapper-6">At IITU, we're dedicated to pushing the boundaries of what's possible. Join us in shaping the future of IoT security, where creativity thrives, challenges are embraced, and collaboration fuels success.</p>
+                              <p class="text-wrapper-6">Explore our current job openings below and take the next step towards a rewarding career with us. Let's create something extraordinary together!</p>
+
+
+                            </div>
+                            <div class="style-secondary-4"><button class="text-wrapper">Open positions</button></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="footer">
+                        <div class="content-12">
+                          <div class="newsletter">
+                            <img class="color-dark" src="{% static '../../static/manager/images/banner-images/14.png' %}" alt="My Image">
+
+                            <p class="text-wrapper-2">
+                              Stay up to date on the latest features and releases by joining our newsletter.
+                            </p>
+                            <div class="div-5">
+                              <div class="form">
+                                <div class="type-default"><div class="placeholder">Your email</div></div>
+                                <button class="text-wrapper style-secondary-5">Subscribe</button>
+                              </div>
+                              <p class="text-wrapper-5">
+                                By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="links">
+                            <div class="div-6">
+                              <div class="text-wrapper-8">Feedback</div>
+                              <div class="div-9">
+                                <div class="link"><div class="text-wrapper-9">Ivanov Ivan</div></div>
+                                <div class="link"><div class="text-wrapper-9">Egizbayeva Asem</div></div>
+                                <div class="link"><div class="text-wrapper-9">Toksanova Togzhan</div></div>
+                                <div class="link"><div class="text-wrapper-10">Korkembayeva Azhar</div></div>
+                                <div class="link"><div class="text-wrapper-9">More...</div></div>
+                              </div>
+                            </div>
+                            <div class="div-6">
+                              <div class="text-wrapper-8">Partners</div>
+                              <div class="div-9">
+                                <div class="link"><div class="text-wrapper-9">Apple</div></div>
+                                <div class="link"><div class="text-wrapper-9">Samsung</div></div>
+                                <div class="link"><div class="text-wrapper-9">Tesla</div></div>
+                                <div class="link"><div class="text-wrapper-9">Xiomi</div></div>
+                                <div class="link"><div class="text-wrapper-9">More...</div></div>
+                              </div>
+                            </div>
+                            <div class="div-6">
+                              <div class="text-wrapper-8">Follow us</div>
+                              <div class="div-9">
+                                <div class="link-2">
+                                  <img class="img-2" src="{% static '../../static/manager/images/banner-images/15.png' %}" alt="My Image">
+                                  <div class="text-wrapper-11">Facebook</div>
+                                </div>
+                                <div class="link-2">
+                                  <img class="img-2" src="{% static '../../static/manager/images/banner-images/16.png' %}" alt="My Image">
+                                  <div class="text-wrapper-11">Instagram</div>
+                                </div>
+                                <div class="link-2">
+                                  <img class="img-2" src="{% static '../../static/manager/images/banner-images/17.webp' %}" alt="My Image">
+                                  <div class="text-wrapper-11">X</div>
+                                </div>
+                                <div class="link-2">
+                                  <img class="img-2" src="{% static '../../static/manager/images/banner-images/18.png' %}" alt="My Image">
+                                  <div class="text-wrapper-11">LinkedIn</div>
+                                </div>
+                                <div class="link-2">
+                                  <img class="img-2" src="{% static '../../static/manager/images/banner-images/19.png' %}" alt="My Image">
+                                  <div class="text-wrapper-11">YouTube</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="div-4">
+                          <div class="divider-2"></div>
+                          <div class="row-2">
+                            <p class="text-wrapper-12">© 2023 Relume. All rights reserved.</p>
+                            <div class="footer-links">
+                              <div class="text-wrapper-13">Privacy Policy</div>
+                              <div class="text-wrapper-13">Terms of Service</div>
+                              <div class="text-wrapper-13">Cookies Settings</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+
+            </div><!--End of Row-->
+
+        </header>
+
+    </div>
+
+    <!-- Include JavaScript resources -->
+    <script src="{% static 'manager/js/jquery.1.8.3.min.js' %}"></script>
+    <script src="{% static 'manager/js/wow.min.js' %}"></script>
+    <script src="{% static 'manager/js/featherlight.min.js' %}"></script>
+    <script src="{% static 'manager/js/featherlight.gallery.min.js' %}"></script>
+    <script src="{% static 'manager/js/jquery.enllax.min.js' %}"></script>
+    <script src="{% static 'manager/js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'manager/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'manager/js/jquery.stickyNavbar.min.js' %}"></script>
+    <script src="{% static 'manager/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'manager/js/images-loaded.min.js' %}"></script>
+    <script src="{% static 'manager/js/lightbox.min.js' %}"></script>
+    <script src="{% static 'manager/js/site.js' %}"></script>
+{% endblock %}

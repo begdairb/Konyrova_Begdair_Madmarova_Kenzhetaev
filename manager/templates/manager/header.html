@@ -1,0 +1,36 @@
+{% load static %}
+
+{% block header %}
+<div id="header" class="nav-collapse">
+    <div class="row clearfix">
+        <div class="col-1">
+
+            <!--Main Navigation-->
+            <nav id="nav-main">
+                <ul>
+                    <li>
+                        <a href="{% url 'manager:index_page' %}">Home</a>
+                    </li>
+                    {% if request.user.is_authenticated %}
+                        <li>
+                            <a href="{% url 'manager:dashboard_page' %}">Dashboard</a>
+                        </li>
+                    {% endif %}
+                    <li>
+                        {% if request.user.is_authenticated %}
+                            <a href="{% url 'manager:logout' %}">Logout</a>
+                        {% else %}
+                            <a href="{% url 'manager:login_page' %}">Login</a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </nav>
+            <!--End of Main Navigation-->
+
+            <div id="nav-trigger"><span></span></div>
+            <nav id="nav-mobile"></nav>
+
+        </div>
+    </div>
+</div><!--End of Header-->
+{% endblock %}

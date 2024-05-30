@@ -1,0 +1,116 @@
+{% extends 'manager/base.html' %}
+{% load static %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% block body %}
+
+    {% include 'manager/loader.html' %}
+
+    <div class="page-border" data-wow-duration="0.7s" data-wow-delay="0.2s">
+        <div class="top-border wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;"></div>
+        <div class="right-border wow fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;"></div>
+        <div class="bottom-border wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;"></div>
+        <div class="left-border wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"></div>
+    </div>
+
+    <div id="wrapper">
+
+        <header id="banner2" class="scrollto clearfix" data-enllax-ratio=".5">
+            {% include 'manager/header.html' %}
+        </header>
+
+        <!--Main Content Area-->
+        <main id="content">
+
+            <!--Devices Tables-->
+            <section id="pricing" class="secondary-color text-center scrollto clearfix ">
+                <div class="row clearfix">
+
+                    {% if devices %}
+                        <div class="section-heading">
+                            <h3>YOUR DEVICES</h3>
+                            <h2 class="section-title">Manager Your IoT Devices</h2>
+                        </div>
+                        {% for device_id, device in devices.items %}
+                            <!--Device Block-->
+                            <div class="pricing-block col-3 wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="pricing-block-content">
+                                    <h3>{{ device.name }}</h3>
+                                    <div class="pricing">
+                                        <div class="price">{{ device.prediction_score_avg }}</div>
+                                        <p>Malicious Activity - Prediction Score</p>
+                                    </div>
+                                    <ul>
+                                        <li>{{ device.analysis_count }} analysis provided</li>
+                                        <li>{{ device.payload_count }} file payloads</li>
+                                        <li>{{ device.packet_length }} MB of data volume</li>
+                                        <li>Created at {{ device.created_date }}</li>
+                                    </ul>
+                                    <a href="{% url 'manager:device_page' device_id %}" class="button">Details</a>
+                                </div>
+                            </div>
+                            <!--End Device Block-->
+                        {% endfor %}
+                    {% else %}
+                        <div class="section-heading">
+                            <h3>YOUR DEVICES</h3>
+                            <h2 class="section-title">Add your IoT devices to manage</h2>
+                        </div>
+                    {% endif %}
+
+                </div>
+            </section>
+            <!--End of Devices Tables-->
+
+            <!--New Device-->
+            <section id="newDevice" class="secondary-color text-center scrollto clearfix ">
+                <div class="row clearfix">
+                    <div class="section-heading">
+                        <h3>NEW DEVICE</h3>
+                        <h2 class="section-title">Create New Device</h2>
+                    </div>
+                    <div class="pricing-block text-center wow fadeInUp mx-auto" data-wow-delay="0.4s">
+                        <form class="form" method="POST">
+                            {% csrf_token %}
+
+                            <div class="input-group text-center">
+                                <label for="name">Name of device:</label>
+                            </div>
+                            <div class="input-group text-center">
+                                <input type="text" class="form-control" style="width: 300px;" name="name" id="name" required>
+                            </div>
+                            <div class="input-group text-center">
+                                <label for="ipv4">IPv4 address:</label>
+                            </div>
+                            <div class="input-group text-center">
+                                <input type="text" class="form-control" style="width: 300px;" name="ipv4" id="ipv4" required>
+                            </div>
+                            <div class="input-group text-center">
+                                <input type="submit" value="Create device" class="button">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <!--End Main Content Area-->
+
+    </div>
+
+    <!-- Include JavaScript resources -->
+    <script src="{% static 'manager/js/jquery.1.8.3.min.js' %}"></script>
+    <script src="{% static 'manager/js/wow.min.js' %}"></script>
+    <script src="{% static 'manager/js/featherlight.min.js' %}"></script>
+    <script src="{% static 'manager/js/featherlight.gallery.min.js' %}"></script>
+    <script src="{% static 'manager/js/jquery.enllax.min.js' %}"></script>
+    <script src="{% static 'manager/js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'manager/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'manager/js/jquery.stickyNavbar.min.js' %}"></script>
+    <script src="{% static 'manager/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'manager/js/images-loaded.min.js' %}"></script>
+    <script src="{% static 'manager/js/lightbox.min.js' %}"></script>
+    <script src="{% static 'manager/js/site.js' %}"></script>
+
+{% endblock %}
